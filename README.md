@@ -186,9 +186,8 @@ Type 'string' is not assignable to type 'number'
 
 ---
 
-# Bonus Questions
 
-## What is `any`?
+## 11. What is `any`?
 
 ```ts
 let value: any = 10;
@@ -201,7 +200,7 @@ The `any` type disables TypeScript's type checking.
 
 ---
 
-## What is the difference between `any` and `unknown`?
+## 12. What is the difference between `any` and `unknown`?
 
 ### any
 
@@ -225,7 +224,7 @@ if (typeof value === "string") {
 
 ---
 
-## What is a Union Type?
+## 13. What is a Union Type?
 
 ```ts
 let id: string | number;
@@ -238,7 +237,7 @@ Union types allow multiple possible types.
 
 ---
 
-## What is Type Inference?
+## 14. What is Type Inference?
 
 ```ts
 let name = "Shahriar";
@@ -248,7 +247,7 @@ TypeScript automatically infers that `name` is a string.
 
 ---
 
-## What is Type Assertion?
+## 15. What is Type Assertion?
 
 ```ts
 let value: unknown = "Hello";
@@ -260,7 +259,7 @@ Type assertion tells TypeScript to treat a value as a specific type.
 
 ---
 
-## What is the difference between `==` and `===`?
+## 16. What is the difference between `==` and `===`?
 
 ### Loose Equality
 
@@ -278,7 +277,7 @@ Always prefer `===`.
 
 ---
 
-## What is an Interface Extension?
+## 17.  What is an Interface Extension?
 
 ```ts
 interface Person {
@@ -294,7 +293,7 @@ Interfaces can inherit properties from other interfaces.
 
 ---
 
-## What is a Tuple?
+## 18. What is a Tuple?
 
 ```ts
 let user: [string, number] = ["Shahriar", 30];
@@ -304,7 +303,7 @@ Tuples store fixed-length arrays with specific types.
 
 ---
 
-## What is an Enum?
+## 19.  What is an Enum?
 
 ```ts
 enum Role {
@@ -318,7 +317,7 @@ Enums represent a set of named constants.
 
 ---
 
-## What are Generics?
+## 20. What are Generics?
 
 ```ts
 function identity<T>(value: T): T {
