@@ -1,3 +1,141 @@
+# Zod Interview Questions & Answers
+
+## 1. What is Zod?
+
+**Answer:**
+
+Zod is a TypeScript-first schema validation library used to validate data at runtime and automatically generate TypeScript types.
+
+### Example
+
+```ts
+import { z } from "zod";
+
+const userSchema = z.object({
+  name: z.string(),
+  age: z.number(),
+});
+```
+
+---
+
+## 2. Why do we use Zod?
+
+**Answer:**
+
+Zod helps:
+
+- Validate user input
+- Validate API requests and responses
+- Prevent runtime errors
+- Generate TypeScript types automatically
+- Improve code safety
+
+### Example
+
+```ts
+const userSchema = z.object({
+  name: z.string(),
+  age: z.number(),
+});
+
+userSchema.parse({
+  name: "John",
+  age: 25,
+});
+```
+
+---
+
+## 3. What is the difference between `parse()` and `safeParse()`?
+
+**Answer:**
+
+### parse()
+
+Throws an error if validation fails.
+
+```ts
+userSchema.parse({
+  name: "John",
+  age: "25",
+});
+```
+
+### safeParse()
+
+Returns an object instead of throwing an error.
+
+```ts
+const result = userSchema.safeParse({
+  name: "John",
+  age: "25",
+});
+
+console.log(result.success);
+```
+
+**Output:**
+
+```ts
+false
+```
+
+---
+
+## 4. What is `z.infer` in Zod?
+
+**Answer:**
+
+`z.infer` creates TypeScript types directly from a Zod schema.
+
+### Example
+
+```ts
+const userSchema = z.object({
+  name: z.string(),
+  age: z.number(),
+});
+
+type User = z.infer<typeof userSchema>;
+```
+
+Generated Type:
+
+```ts
+type User = {
+  name: string;
+  age: number;
+};
+```
+
+---
+
+## 5. What is `refine()` used for in Zod?
+
+**Answer:**
+
+`refine()` is used for custom validation rules that are not available by default.
+
+### Example
+
+```ts
+const passwordSchema = z
+  .string()
+  .refine(
+    password => password.length >= 8,
+    {
+      message: "Password must be at least 8 characters",
+    }
+  );
+```
+
+If the password is shorter than 8 characters, validation will fail.
+
+---
+
+
+
 # TypeScript Interview Questions & Answers
 
 ## 1. What is TypeScript and how is it different from JavaScript?
